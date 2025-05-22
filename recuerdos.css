@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(#eaf6ff, #fcd8e0);
+  overflow-x: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.titulo {
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.5rem;
+  color: #d45aad;
+  margin-bottom: 40px;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.collage img {
+  width: 150%;
+  height: 250px;
+  
+  /* object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2); */
+}
+
+.carta {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff9fc;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+}
+
+/* Estrellas/Flores flotantes */
+.flores-flotantes::before,
+.flores-flotantes::after {
+  /* content: '🌸🌼💮🌺🌷'; */
+  font-size: 2rem;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  animation: flotar 10s linear infinite;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.flores-flotantes::after {
+  animation-delay: 5s;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(-100px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+
+.carta-interactiva {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffeef5;
+  border: 2px solid #d45aad;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.carta-interactiva .tapa {
+  background-color: #d45aad;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: 'Fredoka', sans-serif;
+  transition: background 0.4s;
+}
+
+.carta-interactiva:hover .tapa {
+  background-color: #c03d96;
+}
+
+.carta-interactiva .contenido {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  font-size: 1.1rem;
+  color: #444;
+  background-color: white;
+}
+
+.carta-interactiva.abierta .contenido {
+  max-height: 500px;
+  opacity: 1;
+  padding: 20px;
+}
+
+
+
+.volver-btn {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.volver-btn a {
+  display: inline-block;
+  background-color: #4d6d9f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Fredoka', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.volver-btn a:hover {
+  background-color: #36527a;
+  transform: scale(1.05);
+}
